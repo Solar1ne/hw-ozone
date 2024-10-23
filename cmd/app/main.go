@@ -16,7 +16,7 @@ import (
 func main() {
 	cartRepo := repositories.NewInMemoryCartRepository()
 
-	cartService := services.NewCartService(cartRepo, clients.NewProductClient("http://localhost:8082", "testtoken", &http.Client{})) // Передаем nil вместо продукта-клиента
+	cartService := services.NewCartService(cartRepo, clients.NewProductClient("https://route256.pavl.uk:8080/docs/", "testtoken", &http.Client{})) // Передаем nil вместо продукта-клиента
 	cartHandler := handlers.NewCartHandler(cartService)
 
 	// Настройка маршрутов

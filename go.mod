@@ -1,12 +1,16 @@
 module awesomeProject4
 
-go 1.22
+go 1.22.7
+
+toolchain go1.22.9
 
 require (
 	github.com/go-playground/validator/v10 v10.22.1
 	github.com/gojuno/minimock/v3 v3.4.1
 	github.com/gorilla/mux v1.8.1
 	github.com/stretchr/testify v1.8.4
+	google.golang.org/grpc v1.68.0
+	google.golang.org/protobuf v1.35.2
 )
 
 require (
@@ -20,6 +24,7 @@ require (
 	golang.org/x/crypto v0.27.0 // indirect
 	golang.org/x/net v0.29.0 // indirect
 	golang.org/x/sys v0.25.0 // indirect
-	golang.org/x/text v0.18.0 // indirect
+	golang.org/x/text v0.20.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20241118233622-e639e219e697 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

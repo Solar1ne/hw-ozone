@@ -72,5 +72,6 @@ func (pc *ProductClient) GetProduct(ctx context.Context, sku int64) (*models.Pro
 	}
 
 	bodyBytes, _ := io.ReadAll(resp.Body)
+
 	return nil, fmt.Errorf("failed to get product info: %s", string(bodyBytes))
 }

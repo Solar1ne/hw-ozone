@@ -2,6 +2,8 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
+	"io"
 	"net/http"
 	"strconv"
 
@@ -143,4 +145,15 @@ func (h *CartHandler) GetCart(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(res)
+}
+
+func (s *Server) Checkout(w http.ResponseWriter, r *http.Request) error {
+	w.Header().Add("Content-Type", "application/json")
+
+	reqData, err := io.ReadAll(r.Body)
+	defer r.Body.Close()
+	if err != nil {
+		return fmt.Errorf("io.ReadAll: %w", err)
+	}
+
 }

@@ -12,6 +12,7 @@ type CartRepository interface {
 	GetCart(userID int64) (*models.Cart, error)
 	SaveCart(cart *models.Cart) error
 	DeleteCart(userID int64) error
+	Checkout(ctx context.Context, userID int64) (OrderID OrderID, error)
 }
 
 type ProductService interface {
